@@ -1,0 +1,679 @@
+fileFormatVersion: 2
+guid: b45acc58797f51c4db6cb50e1136ce6b
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: coin_0
+    21300002: coin_1
+    21300004: coin_2
+    21300006: coin_3
+    21300008: coin_4
+    21300010: coin_5
+    21300012: coin_6
+    21300014: coin_7
+    21300016: coin_8
+    21300018: coin_9
+    21300020: coin_10
+    21300022: coin_11
+    21300024: coin_12
+    21300026: coin_13
+    21300028: coin_14
+    21300030: coin_15
+    21300032: coin_16
+    21300034: coin_17
+    21300036: coin_18
+    21300038: coin_19
+    21300040: coin_20
+    21300042: coin_21
+    21300044: coin_22
+    21300046: coin_23
+    21300048: coin_24
+    21300050: coin_25
+    21300052: coin_26
+    21300054: coin_27
+    21300056: coin_28
+    21300058: coin_29
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: coin_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 867
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46.5, y: 78.5}
+        - {x: -63.5, y: 76.5}
+        - {x: -78.5, y: 46.5}
+        - {x: -78.5, y: -65.5}
+        - {x: -42.5, y: -78.5}
+        - {x: 54.5, y: -78.5}
+        - {x: 78.5, y: -61.5}
+        - {x: 78.5, y: 53.5}
+        - {x: 51.5, y: 78.5}
+    - name: coin_1
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 867
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -59.5, y: 78.5}
+        - {x: -78.5, y: 64.5}
+        - {x: -78.5, y: -67.5}
+        - {x: -48.5, y: -78.5}
+        - {x: 64.5, y: -78.5}
+        - {x: 78.5, y: -55.5}
+        - {x: 78.5, y: 69.5}
+        - {x: 64.5, y: 78.5}
+    - name: coin_2
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 867
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 64.5, y: 78.5}
+        - {x: -53.5, y: 78.5}
+        - {x: -78.5, y: 51.5}
+        - {x: -78.5, y: -48.5}
+        - {x: -47.5, y: -77.5}
+        - {x: -36.5, y: -78.5}
+        - {x: 33.5, y: -78.5}
+        - {x: 73.5, y: -60.5}
+        - {x: 78.5, y: -37.5}
+        - {x: 78.5, y: 45.5}
+    - name: coin_3
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 867
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66.5, y: 78.5}
+        - {x: -78.5, y: 54.5}
+        - {x: -78.5, y: -67.5}
+        - {x: -77.5, y: -68.5}
+        - {x: -44.5, y: -78.5}
+        - {x: 78.5, y: -78.5}
+        - {x: 78.5, y: 71.5}
+        - {x: 59.5, y: 78.5}
+    - name: coin_4
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 867
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 63.5, y: 78.5}
+        - {x: -78.5, y: 78.5}
+        - {x: -78.5, y: -50.5}
+        - {x: -74.5, y: -65.5}
+        - {x: -36.5, y: -78.5}
+        - {x: 45.5, y: -78.5}
+        - {x: 78.5, y: -58.5}
+        - {x: 78.5, y: 47.5}
+        - {x: 75.5, y: 62.5}
+    - name: coin_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 710
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 47.5, y: 78.5}
+        - {x: -41.5, y: 78.5}
+        - {x: -59.5, y: 75.5}
+        - {x: -78.5, y: 59.5}
+        - {x: -78.5, y: -78.5}
+        - {x: 71.5, y: -78.5}
+        - {x: 78.5, y: -59.5}
+        - {x: 78.5, y: 46.5}
+        - {x: 77.5, y: 55.5}
+    - name: coin_6
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 710
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58.5, y: 78.5}
+        - {x: -58.5, y: 78.5}
+        - {x: -78.5, y: 41.5}
+        - {x: -78.5, y: -39.5}
+        - {x: -53.5, y: -78.5}
+        - {x: 70.5, y: -78.5}
+        - {x: 78.5, y: -28.5}
+        - {x: 78.5, y: 44.5}
+        - {x: 61.5, y: 77.5}
+    - name: coin_7
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 710
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47.5, y: 78.5}
+        - {x: -78.5, y: 62.5}
+        - {x: -78.5, y: -50.5}
+        - {x: -57.5, y: -78.5}
+        - {x: 54.5, y: -78.5}
+        - {x: 78.5, y: -58.5}
+        - {x: 78.5, y: 63.5}
+        - {x: 60.5, y: 78.5}
+    - name: coin_8
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 710
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.5, y: 78.5}
+        - {x: -78.5, y: -60.5}
+        - {x: -59.5, y: -78.5}
+        - {x: 41.5, y: -78.5}
+        - {x: 77.5, y: -64.5}
+        - {x: 78.5, y: -58.5}
+        - {x: 78.5, y: 52.5}
+        - {x: 66.5, y: 78.5}
+    - name: coin_9
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 710
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -62.5, y: 78.5}
+        - {x: -78.5, y: 55.5}
+        - {x: -78.5, y: -47.5}
+        - {x: -67.5, y: -78.5}
+        - {x: 46.5, y: -78.5}
+        - {x: 78.5, y: -49.5}
+        - {x: 78.5, y: 46.5}
+        - {x: 56.5, y: 78.5}
+    - name: coin_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 553
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.5, y: 78.5}
+        - {x: -78.5, y: -67.5}
+        - {x: -44.5, y: -78.5}
+        - {x: 51.5, y: -78.5}
+        - {x: 78.5, y: -59.5}
+        - {x: 78.5, y: 74.5}
+        - {x: 77.5, y: 78.5}
+    - name: coin_11
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 553
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -69.5, y: 78.5}
+        - {x: -78.5, y: 44.5}
+        - {x: -78.5, y: -48.5}
+        - {x: -43.5, y: -78.5}
+        - {x: 45.5, y: -78.5}
+        - {x: 54.5, y: -76.5}
+        - {x: 78.5, y: -52.5}
+        - {x: 78.5, y: 48.5}
+        - {x: 73.5, y: 78.5}
+    - name: coin_12
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 553
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44.5, y: 78.5}
+        - {x: -52.5, y: 76.5}
+        - {x: -78.5, y: 44.5}
+        - {x: -78.5, y: -51.5}
+        - {x: -53.5, y: -78.5}
+        - {x: 64.5, y: -78.5}
+        - {x: 78.5, y: -69.5}
+        - {x: 78.5, y: 71.5}
+        - {x: 76.5, y: 78.5}
+    - name: coin_13
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 553
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66.5, y: 78.5}
+        - {x: -75.5, y: 36.5}
+        - {x: -77.5, y: 24.5}
+        - {x: -78.5, y: 17.5}
+        - {x: -78.5, y: -17.5}
+        - {x: -77.5, y: -29.5}
+        - {x: -69.5, y: -50.5}
+        - {x: -57.5, y: -65.5}
+        - {x: -40.5, y: -78.5}
+        - {x: 71.5, y: -78.5}
+        - {x: 78.5, y: -45.5}
+        - {x: 78.5, y: 67.5}
+        - {x: 69.5, y: 78.5}
+    - name: coin_14
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 553
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66.5, y: 78.5}
+        - {x: -78.5, y: 57.5}
+        - {x: -78.5, y: -31.5}
+        - {x: -73.5, y: -64.5}
+        - {x: -37.5, y: -78.5}
+        - {x: 47.5, y: -78.5}
+        - {x: 78.5, y: -48.5}
+        - {x: 78.5, y: 46.5}
+        - {x: 62.5, y: 78.5}
+    - name: coin_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 396
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55.5, y: 78.5}
+        - {x: -78.5, y: 44.5}
+        - {x: -78.5, y: -50.5}
+        - {x: -71.5, y: -78.5}
+        - {x: 68.5, y: -78.5}
+        - {x: 78.5, y: -52.5}
+        - {x: 78.5, y: 55.5}
+        - {x: 59.5, y: 78.5}
+    - name: coin_16
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 396
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46.5, y: 78.5}
+        - {x: -78.5, y: 53.5}
+        - {x: -78.5, y: -41.5}
+        - {x: -63.5, y: -71.5}
+        - {x: -35.5, y: -78.5}
+        - {x: 45.5, y: -78.5}
+        - {x: 78.5, y: -61.5}
+        - {x: 78.5, y: 50.5}
+        - {x: 71.5, y: 78.5}
+    - name: coin_17
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 396
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.5, y: 78.5}
+        - {x: -78.5, y: 51.5}
+        - {x: -78.5, y: -75.5}
+        - {x: -66.5, y: -78.5}
+        - {x: 73.5, y: -78.5}
+        - {x: 78.5, y: -72.5}
+        - {x: 78.5, y: 66.5}
+        - {x: 43.5, y: 78.5}
+    - name: coin_18
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 396
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -68.5, y: 78.5}
+        - {x: -78.5, y: 60.5}
+        - {x: -78.5, y: -38.5}
+        - {x: -58.5, y: -76.5}
+        - {x: -36.5, y: -78.5}
+        - {x: 48.5, y: -78.5}
+        - {x: 78.5, y: -47.5}
+        - {x: 78.5, y: 65.5}
+        - {x: 50.5, y: 78.5}
+    - name: coin_19
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 396
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48.5, y: 78.5}
+        - {x: -78.5, y: 51.5}
+        - {x: -78.5, y: -55.5}
+        - {x: -60.5, y: -78.5}
+        - {x: 56.5, y: -78.5}
+        - {x: 78.5, y: -70.5}
+        - {x: 78.5, y: 38.5}
+        - {x: 66.5, y: 78.5}
+    - name: coin_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 239
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.5, y: 78.5}
+        - {x: -60.5, y: 73.5}
+        - {x: -78.5, y: 62.5}
+        - {x: -78.5, y: -59.5}
+        - {x: -73.5, y: -78.5}
+        - {x: 47.5, y: -78.5}
+        - {x: 78.5, y: -50.5}
+        - {x: 78.5, y: 57.5}
+        - {x: 57.5, y: 78.5}
+    - name: coin_21
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 239
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65.5, y: 78.5}
+        - {x: -58.5, y: 78.5}
+        - {x: -78.5, y: 70.5}
+        - {x: -78.5, y: -57.5}
+        - {x: -77.5, y: -59.5}
+        - {x: -38.5, y: -78.5}
+        - {x: 38.5, y: -78.5}
+        - {x: 56.5, y: -74.5}
+        - {x: 78.5, y: -44.5}
+        - {x: 78.5, y: 40.5}
+        - {x: 76.5, y: 55.5}
+    - name: coin_22
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 239
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 47.5, y: 78.5}
+        - {x: -66.5, y: 78.5}
+        - {x: -78.5, y: 48.5}
+        - {x: -78.5, y: -63.5}
+        - {x: -60.5, y: -78.5}
+        - {x: 45.5, y: -78.5}
+        - {x: 63.5, y: -72.5}
+        - {x: 78.5, y: -41.5}
+        - {x: 78.5, y: 52.5}
+    - name: coin_23
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 239
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73.5, y: 78.5}
+        - {x: -78.5, y: 71.5}
+        - {x: -78.5, y: -54.5}
+        - {x: -73.5, y: -78.5}
+        - {x: 33.5, y: -78.5}
+        - {x: 46.5, y: -77.5}
+        - {x: 78.5, y: -44.5}
+        - {x: 78.5, y: 78.5}
+    - name: coin_24
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 239
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.5, y: 78.5}
+        - {x: -76.5, y: 63.5}
+        - {x: -78.5, y: 49.5}
+        - {x: -78.5, y: -73.5}
+        - {x: -58.5, y: -78.5}
+        - {x: 65.5, y: -78.5}
+        - {x: 78.5, y: -46.5}
+        - {x: 78.5, y: 40.5}
+        - {x: 60.5, y: 78.5}
+    - name: coin_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 82
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47.5, y: 78.5}
+        - {x: -78.5, y: 64.5}
+        - {x: -78.5, y: -73.5}
+        - {x: -65.5, y: -78.5}
+        - {x: 55.5, y: -78.5}
+        - {x: 78.5, y: -55.5}
+        - {x: 78.5, y: 47.5}
+        - {x: 45.5, y: 78.5}
+    - name: coin_26
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 82
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 78.5, y: 57.5}
+        - {x: 44.5, y: 78.5}
+        - {x: -63.5, y: 78.5}
+        - {x: -78.5, y: 49.5}
+        - {x: -78.5, y: -62.5}
+        - {x: -55.5, y: -78.5}
+        - {x: 36.5, y: -78.5}
+        - {x: 70.5, y: -59.5}
+        - {x: 76.5, y: -33.5}
+        - {x: 78.5, y: -23.5}
+    - name: coin_27
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 82
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.5, y: 78.5}
+        - {x: -73.5, y: 50.5}
+        - {x: -78.5, y: 28.5}
+        - {x: -78.5, y: -44.5}
+        - {x: -67.5, y: -78.5}
+        - {x: 76.5, y: -78.5}
+        - {x: 78.5, y: -77.5}
+        - {x: 78.5, y: 78.5}
+    - name: coin_28
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 82
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 52.5, y: 78.5}
+        - {x: -52.5, y: 78.5}
+        - {x: -78.5, y: 60.5}
+        - {x: -78.5, y: -78.5}
+        - {x: 66.5, y: -78.5}
+        - {x: 78.5, y: -53.5}
+        - {x: 78.5, y: 48.5}
+        - {x: 74.5, y: 63.5}
+    - name: coin_29
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 82
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46.5, y: 78.5}
+        - {x: -63.5, y: 76.5}
+        - {x: -78.5, y: 46.5}
+        - {x: -78.5, y: -65.5}
+        - {x: -42.5, y: -78.5}
+        - {x: 54.5, y: -78.5}
+        - {x: 78.5, y: -61.5}
+        - {x: 78.5, y: 53.5}
+        - {x: 51.5, y: 78.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
