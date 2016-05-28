@@ -45,29 +45,34 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -83,6 +88,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 79.5}
+        - {x: -48, y: 71.5}
+        - {x: -82, y: 33.5}
+        - {x: -89, y: 18.5}
+        - {x: -89, y: -71.5}
+        - {x: -66, y: -79.5}
+        - {x: 85, y: -79.5}
+        - {x: 89, y: -65.5}
+        - {x: 89, y: 71.5}
+        - {x: 41, y: 79.5}
     - name: urchin_1
       rect:
         serializedVersion: 2
@@ -93,6 +109,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -71, y: 79.5}
+        - {x: -89, y: 57.5}
+        - {x: -89, y: -32.5}
+        - {x: -60, y: -77.5}
+        - {x: 54, y: -77.5}
+        - {x: 89, y: -42.5}
+        - {x: 89, y: 75.5}
+        - {x: 56, y: 79.5}
     - name: urchin_2
       rect:
         serializedVersion: 2
@@ -103,6 +128,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 84, y: 79.5}
+        - {x: -83, y: 79.5}
+        - {x: -90, y: 19.5}
+        - {x: -90, y: -71.5}
+        - {x: -69, y: -76.5}
+        - {x: 60, y: -76.5}
+        - {x: 82, y: -42.5}
+        - {x: 90, y: -7.5}
+        - {x: 90, y: 78.5}
     - name: urchin_3
       rect:
         serializedVersion: 2
@@ -113,6 +148,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 42, y: 80.5}
+        - {x: -64, y: 80.5}
+        - {x: -89, y: 31.5}
+        - {x: -89, y: -40.5}
+        - {x: -49, y: -75.5}
+        - {x: 62, y: -75.5}
+        - {x: 89, y: -19.5}
+        - {x: 89, y: 67.5}
+        - {x: 86, y: 74.5}
     - name: urchin_4
       rect:
         serializedVersion: 2
@@ -123,6 +168,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -60, y: 81.5}
+        - {x: -89, y: 37.5}
+        - {x: -89, y: -66.5}
+        - {x: -62, y: -75.5}
+        - {x: 83, y: -75.5}
+        - {x: 88, y: -71.5}
+        - {x: 88, y: 81.5}
     - name: urchin_5
       rect:
         serializedVersion: 2
@@ -133,6 +186,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -88, y: -47.5}
+        - {x: -43, y: -74.5}
+        - {x: 63, y: -74.5}
+        - {x: 87, y: -57.5}
+        - {x: 87, y: 53.5}
+        - {x: 84, y: 72.5}
+        - {x: 32, y: 82.5}
+        - {x: -63, y: 82.5}
+        - {x: -88, y: 41.5}
     - name: urchin_6
       rect:
         serializedVersion: 2
@@ -143,6 +206,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55, y: 83.5}
+        - {x: -88, y: 50.5}
+        - {x: -88, y: -33.5}
+        - {x: -49, y: -74.5}
+        - {x: 40, y: -74.5}
+        - {x: 87, y: -42.5}
+        - {x: 87, y: 50.5}
+        - {x: 46, y: 83.5}
     - name: urchin_7
       rect:
         serializedVersion: 2
@@ -153,6 +225,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 48, y: 84.5}
+        - {x: -31, y: 84.5}
+        - {x: -72, y: 71.5}
+        - {x: -88, y: 48.5}
+        - {x: -88, y: -33.5}
+        - {x: -69, y: -73.5}
+        - {x: 68, y: -73.5}
+        - {x: 88, y: -41.5}
+        - {x: 88, y: 37.5}
+        - {x: 84, y: 68.5}
     - name: urchin_8
       rect:
         serializedVersion: 2
@@ -163,6 +246,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52, y: 85.5}
+        - {x: -90, y: 43.5}
+        - {x: -90, y: -8.5}
+        - {x: -86, y: -49.5}
+        - {x: -29, y: -73.5}
+        - {x: 46, y: -73.5}
+        - {x: 89, y: -50.5}
+        - {x: 89, y: 75.5}
+        - {x: 55, y: 85.5}
     - name: urchin_9
       rect:
         serializedVersion: 2
@@ -173,6 +266,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58, y: 84.5}
+        - {x: -55, y: 84.5}
+        - {x: -91, y: 42.5}
+        - {x: -91, y: -32.5}
+        - {x: -70, y: -75.5}
+        - {x: 59, y: -75.5}
+        - {x: 91, y: -37.5}
+        - {x: 91, y: 55.5}
     - name: urchin_10
       rect:
         serializedVersion: 2
@@ -183,6 +285,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52, y: 82.5}
+        - {x: -92, y: 64.5}
+        - {x: -92, y: -57.5}
+        - {x: -83, y: -76.5}
+        - {x: 59, y: -76.5}
+        - {x: 92, y: -63.5}
+        - {x: 92, y: 58.5}
+        - {x: 77, y: 82.5}
     - name: urchin_11
       rect:
         serializedVersion: 2
@@ -193,6 +304,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -82, y: 80.5}
+        - {x: -92, y: 67.5}
+        - {x: -92, y: -59.5}
+        - {x: -61, y: -77.5}
+        - {x: 50, y: -77.5}
+        - {x: 92, y: -56.5}
+        - {x: 92, y: 71.5}
+        - {x: 73, y: 80.5}
     - name: urchin_12
       rect:
         serializedVersion: 2
@@ -203,6 +323,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52, y: 78.5}
+        - {x: -92, y: 27.5}
+        - {x: -92, y: -55.5}
+        - {x: -49, y: -79.5}
+        - {x: 56, y: -79.5}
+        - {x: 92, y: -51.5}
+        - {x: 92, y: 77.5}
+        - {x: 87, y: 78.5}
     - name: urchin_13
       rect:
         serializedVersion: 2
@@ -213,6 +342,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 60, y: 77.5}
+        - {x: -64, y: 77.5}
+        - {x: -92, y: 33.5}
+        - {x: -92, y: -31.5}
+        - {x: -64, y: -80.5}
+        - {x: 73, y: -80.5}
+        - {x: 92, y: -18.5}
+        - {x: 92, y: 34.5}
+        - {x: 82, y: 52.5}
     - name: urchin_14
       rect:
         serializedVersion: 2
@@ -223,6 +362,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 75.5}
+        - {x: -92, y: 57.5}
+        - {x: -92, y: -74.5}
+        - {x: -71, y: -82.5}
+        - {x: 85, y: -82.5}
+        - {x: 92, y: -75.5}
+        - {x: 92, y: 67.5}
+        - {x: 56, y: 75.5}
     - name: urchin_15
       rect:
         serializedVersion: 2
@@ -233,6 +381,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54, y: 74.5}
+        - {x: -91, y: 43.5}
+        - {x: -91, y: -61.5}
+        - {x: -80, y: -83.5}
+        - {x: 59, y: -83.5}
+        - {x: 91, y: -73.5}
+        - {x: 91, y: 33.5}
+        - {x: 58, y: 74.5}
     - name: urchin_16
       rect:
         serializedVersion: 2
@@ -243,6 +400,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -75, y: 72.5}
+        - {x: -90, y: 58.5}
+        - {x: -90, y: -74.5}
+        - {x: -68, y: -85.5}
+        - {x: 37, y: -85.5}
+        - {x: 90, y: -58.5}
+        - {x: 90, y: 64.5}
+        - {x: 46, y: 72.5}
     - name: urchin_17
       rect:
         serializedVersion: 2
@@ -253,6 +419,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 50, y: 73.5}
+        - {x: -51, y: 73.5}
+        - {x: -89, y: 30.5}
+        - {x: -89, y: -33.5}
+        - {x: -65, y: -85.5}
+        - {x: 62, y: -85.5}
+        - {x: 89, y: -52.5}
+        - {x: 89, y: 26.5}
+        - {x: 86, y: 51.5}
     - name: urchin_18
       rect:
         serializedVersion: 2
@@ -263,6 +439,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -57, y: 74.5}
+        - {x: -88, y: 39.5}
+        - {x: -88, y: -32.5}
+        - {x: -58, y: -85.5}
+        - {x: 60, y: -85.5}
+        - {x: 88, y: -64.5}
+        - {x: 88, y: 60.5}
+        - {x: 65, y: 74.5}
     - name: urchin_19
       rect:
         serializedVersion: 2
@@ -273,6 +458,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -81, y: 74.5}
+        - {x: -89, y: 60.5}
+        - {x: -89, y: -37.5}
+        - {x: -62, y: -84.5}
+        - {x: 46, y: -84.5}
+        - {x: 89, y: -56.5}
+        - {x: 89, y: 74.5}
     - name: urchin_20
       rect:
         serializedVersion: 2
@@ -283,6 +476,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66, y: 75.5}
+        - {x: -89, y: 64.5}
+        - {x: -89, y: -62.5}
+        - {x: -65, y: -84.5}
+        - {x: 52, y: -84.5}
+        - {x: 89, y: -74.5}
+        - {x: 89, y: 67.5}
+        - {x: 78, y: 75.5}
     - name: urchin_21
       rect:
         serializedVersion: 2
@@ -293,6 +495,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 75.5}
+        - {x: -88, y: 28.5}
+        - {x: -88, y: -26.5}
+        - {x: -65, y: -83.5}
+        - {x: 52, y: -83.5}
+        - {x: 88, y: -60.5}
+        - {x: 88, y: 61.5}
+        - {x: 55, y: 75.5}
     - name: urchin_22
       rect:
         serializedVersion: 2
@@ -303,6 +514,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -75, y: 74.5}
+        - {x: -88, y: 36.5}
+        - {x: -88, y: -49.5}
+        - {x: -86, y: -59.5}
+        - {x: -33, y: -81.5}
+        - {x: 57, y: -81.5}
+        - {x: 88, y: -65.5}
+        - {x: 88, y: 74.5}
     - name: urchin_23
       rect:
         serializedVersion: 2
@@ -313,6 +533,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 75.5}
+        - {x: -87, y: 43.5}
+        - {x: -87, y: -37.5}
+        - {x: -51, y: -80.5}
+        - {x: 64, y: -80.5}
+        - {x: 87, y: -47.5}
+        - {x: 87, y: 47.5}
+        - {x: 49, y: 75.5}
     - name: urchin_24
       rect:
         serializedVersion: 2
@@ -323,6 +552,22 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 87, y: 12.5}
+        - {x: 84, y: 14.5}
+        - {x: 79, y: 15.5}
+        - {x: 81, y: 21.5}
+        - {x: 77, y: 49.5}
+        - {x: 25, y: 75.5}
+        - {x: -13, y: 75.5}
+        - {x: -45, y: 70.5}
+        - {x: -87, y: 49.5}
+        - {x: -87, y: -62.5}
+        - {x: -35, y: -76.5}
+        - {x: -17, y: -80.5}
+        - {x: 35, y: -80.5}
+        - {x: 84, y: -48.5}
+        - {x: 87, y: -7.5}
     - name: urchin_25
       rect:
         serializedVersion: 2
@@ -333,6 +578,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 62, y: 77.5}
+        - {x: -66, y: 77.5}
+        - {x: -87, y: 51.5}
+        - {x: -87, y: -72.5}
+        - {x: -62, y: -81.5}
+        - {x: 66, y: -81.5}
+        - {x: 87, y: -45.5}
+        - {x: 87, y: 70.5}
+        - {x: 84, y: 74.5}
     - name: urchin_26
       rect:
         serializedVersion: 2
@@ -343,6 +598,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -68, y: 78.5}
+        - {x: -88, y: 47.5}
+        - {x: -88, y: -19.5}
+        - {x: -83, y: -44.5}
+        - {x: -40, y: -76.5}
+        - {x: -9, y: -81.5}
+        - {x: 63, y: -81.5}
+        - {x: 88, y: -47.5}
+        - {x: 88, y: 67.5}
+        - {x: 36, y: 78.5}
     - name: urchin_27
       rect:
         serializedVersion: 2
@@ -353,6 +619,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55, y: 79.5}
+        - {x: -89, y: 51.5}
+        - {x: -89, y: -76.5}
+        - {x: -69, y: -81.5}
+        - {x: 82, y: -81.5}
+        - {x: 89, y: -63.5}
+        - {x: 89, y: 66.5}
+        - {x: 55, y: 79.5}
     - name: urchin_28
       rect:
         serializedVersion: 2
@@ -363,6 +638,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73, y: 79.5}
+        - {x: -90, y: 32.5}
+        - {x: -90, y: -57.5}
+        - {x: -55, y: -80.5}
+        - {x: 47, y: -80.5}
+        - {x: 90, y: -54.5}
+        - {x: 90, y: 78.5}
+        - {x: 84, y: 79.5}
     - name: urchin_29
       rect:
         serializedVersion: 2
@@ -373,5 +657,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33, y: 80.5}
+        - {x: -8, y: 80.5}
+        - {x: -50, y: 73.5}
+        - {x: -73, y: 52.5}
+        - {x: -90, y: 19.5}
+        - {x: -90, y: -59.5}
+        - {x: -42, y: -80.5}
+        - {x: 51, y: -80.5}
+        - {x: 90, y: -51.5}
+        - {x: 90, y: 62.5}
+    outline: []
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

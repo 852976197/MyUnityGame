@@ -21,7 +21,7 @@ public class CharController : MonoBehaviour {
    [SerializeField]
    private bool isGrounded = false;
 
-   private float inputX,inputY, wallJumpDir = 0;
+   private float inputX,inputY, wallJumpDir = 0, timeElapsed = 0f;
    private Rigidbody2D body2d;
    private Animator animator;
    private AnimationController myAni;
@@ -63,8 +63,13 @@ public class CharController : MonoBehaviour {
 
          body2d.velocity = new Vector2(body2d.velocity.x, velY);
 
-         var slide = Instantiate(slideEffect, wallDetect.position, Quaternion.identity) as GameObject;
-         slide.transform.localScale = transform.localScale;
+         timeElapsed += Time.deltaTime;
+         if (timeElapsed > 0.15) {
+            var pos = transform.position.y;
+            var slide = Instantiate(slideEffect, transform.position, Quaternion.identity) as GameObject;
+            slide.transform.localScale = transform.localScale;
+            timeElapsed = 0;
+         }
 
          if (wallJumpDir == 0)
             wallJumpDir = -transform.localScale.x;

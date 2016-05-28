@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21272646}
   - 95: {fileID: 9509852}
   - 114: {fileID: 11448868}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DustPuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
