@@ -41,6 +41,4 @@ public class JumpPlatform : MonoBehaviour {
             disactive = false;
       }
    }
-
-
 }

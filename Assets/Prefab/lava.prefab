@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2307544}
   - 114: {fileID: 11477238}
   - 68: {fileID: 6871026}
+  - 61: {fileID: 6189894}
   m_Layer: 0
   m_Name: lava
   m_TagString: Deadly
@@ -26,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 365, y: -228, z: -1.3996247}
-  m_LocalScale: {x: 200, y: 30, z: 1}
+  m_LocalPosition: {x: 246, y: -271.1, z: 0}
+  m_LocalScale: {x: 600, y: 30, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -64,6 +65,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143204}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!61 &6189894
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143204}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -0.3429708}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.16183628}
 --- !u!68 &6871026
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -90,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a58bee2628a2f441b7add76bc61df80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 0, y: 0}
+  speed: {x: 0.05, y: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
