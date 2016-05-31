@@ -4,34 +4,39 @@ using System.Collections;
 public class CameraFollow : MonoBehaviour {
 
    public Vector4 camLimit;
+   public float smoothTimeX, smoothTimeY;
    public GameObject background;
 
-   private float camWidth;
-   private float camHeight;
    private float minX, minY,maxX,maxY;
    private Transform target;
+   private Vector2 velocity;
 
    void Awake() {
       background.SetActive(true);
    }
 
    void Start() {
-      camHeight = Camera.main.orthographicSize;
-      camWidth = Camera.main.orthographicSize * Camera.main.aspect;
+      var camHeight = Camera.main.orthographicSize;
+      var camWidth = Camera.main.orthographicSize * Camera.main.aspect;
       minX = camLimit.x + camWidth;
       minY = camLimit.y + camHeight;
       maxX = camLimit.z - camWidth;
       maxY = camLimit.w - camWidth;
    }
 
-   void Update() {
+   void FixedUpdate() {
       if (GameObject.Find("Player(Clone)")) 
          target = GameObject.Find("Player(Clone)").GetComponent<Transform>();
       else
          target = GameObject.Find("PlayerDeath(Clone)").GetComponent<Transform>();
 
-      var posX = Mathf.Clamp(target.position.x, minX, maxX);
-      var posY = Mathf.Clamp(target.position.y, minY, maxY);
-      transform.position = new Vector3(posX, posY, -100);
+      var posX = Mathf.SmoothDamp(transform.position.x, target.position.x, ref velocity.x, smoothTimeX);
+      var posY = Mathf.SmoothDamp(transform.position.y, target.position.y, ref velocity.y, smoothTimeY);
+
+      if (!GameManager.Instance.winLevel) {
+         posX = Mathf.Clamp(posX, minX, maxX);
+         posY = Mathf.Clamp(posY, minY, maxY);
+         transform.position = new Vector3(posX, posY, -100);
+      }
    }
 }

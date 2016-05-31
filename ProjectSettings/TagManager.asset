@@ -9,6 +9,7 @@ TagManager:
   - Platform
   - Stair
   - CheckPoint
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Ladders
   - NoCollision
   - Terrain
-  - 
+  - Items
   - 
   - 
   - 
@@ -46,20 +47,23 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackItem
+    uniqueID: 3246619723
+    locked: 0
+  - name: Items
+    uniqueID: 1795597123
+    locked: 0
   - name: Plaforms
     uniqueID: 2666359821
     locked: 0
   - name: Player
     uniqueID: 606350985
     locked: 0
-  - name: 
-    uniqueID: 600026165
-    locked: 0
-  - name: 
-    uniqueID: 1795597123
-    locked: 0
-  - name: 
+  - name: FrontObj
     uniqueID: 940224915
+    locked: 0
+  - name: CamUI
+    uniqueID: 600026165
     locked: 0
   - name: 
     uniqueID: 3241408355

@@ -7,21 +7,21 @@ public class CharController : MonoBehaviour {
    public Vector2 wallJump;
    public LayerMask JumpDetectlayers;
    public LayerMask Walldetectlayers;
-   public Transform bodyTrans, leftFoot, rightFoot,wallDetect;
-   public GameObject playerDeadEffect,dustEffect,slideEffect;
+   public Transform bodyTrans, leftFoot, rightFoot, wallDetect,roofDetect;
+   public GameObject playerDeadEffect, dustEffect, slideEffect;
    public BoxCollider2D[] boxCols;
    public CircleCollider2D[] circleCols;
 
    [SerializeField]//[HideInInspector]
-   public bool jumpDown, isOnLadder, isClimbing, isOnWall;
+   public bool jumpDown, isOnLadder, isClimbing, isOnWall,cantJump;
 
    public delegate void onDestroy();
    public event onDestroy DestroyCallBack;
 
    [SerializeField]
-   private bool isGrounded = false;
+   private bool isGrounded = false, airJump = false;
 
-   private float inputX,inputY, wallJumpDir = 0, timeElapsed = 0f;
+   private float inputX, inputY, wallJumpDir = 0, timeElapsed = 0f, airJumpTime;
    private Rigidbody2D body2d;
    private Animator animator;
    private AnimationController myAni;
@@ -33,23 +33,28 @@ public class CharController : MonoBehaviour {
    }
 
    void FixedUpdate() {
-      if (this.gameObject != null) {
+      if (this.gameObject != null && !GameManager.Instance.winLevel) {
          MoveX(Input.GetAxisRaw("Horizontal"));
          MoveY(Input.GetAxisRaw("Vertical"));
          CheckIsGrounded();
          CheckIsOnWall();
-      } 
+         CheckCantJump();
+      }
    }
 
-   void Update(){
-      if (Input.GetButton("Jump"))
+   void Update() {
+      if (Input.GetButton("Jump") && !cantJump &&!GameManager.Instance.winLevel)
          Jump();
    }
 
+   void CheckCantJump() {
+      cantJump = Physics2D.Linecast(transform.position, roofDetect.position, Walldetectlayers)? true: false;
+   }
+
    void CheckIsOnWall() {
-      var nearWall = Physics2D.Linecast(transform.position, wallDetect.position,Walldetectlayers);
-      
-      isOnWall = (nearWall  && !isGrounded) ? true : false;
+      var nearWall = Physics2D.Linecast(transform.position, wallDetect.position, Walldetectlayers);
+
+      isOnWall = (nearWall && !isGrounded) ? true : false;
 
       if (isOnWall) {
          boxCols[0].enabled = false;
@@ -81,14 +86,21 @@ public class CharController : MonoBehaviour {
          circleCols[1].enabled = false;
          wallJumpDir = 0;
       }
-         
+
       myAni.UpdateIsOnWall(isOnWall);
    }
 
    void CheckIsGrounded() {
       isGrounded = (Physics2D.Linecast(bodyTrans.position, leftFoot.position, JumpDetectlayers)
       || Physics2D.Linecast(bodyTrans.position, rightFoot.position, JumpDetectlayers)) ? true : false;
-              
+
+      if (isGrounded)
+         airJumpTime = 0;
+      else {
+         airJumpTime += Time.deltaTime;
+         airJump = (airJumpTime < 0.2f) ? true : false;
+      }
+
       myAni.UpdateIsGrounded(isGrounded);
    }
 
@@ -108,7 +120,7 @@ public class CharController : MonoBehaviour {
       if (inputX != wallJumpDir && !isOnWall) {
          body2d.velocity = new Vector2(inputX * moveSpeed * Time.deltaTime, moveVel.y);
          gameObject.transform.localScale = new Vector3(horizontalInput, 1, 1);
-      }    
+      }
    }
 
    public void MoveY(float verti) {
@@ -127,11 +139,12 @@ public class CharController : MonoBehaviour {
    }
 
    public void Jump() {
-      if (isGrounded && body2d.velocity.y <= 0) {
+      if ((isGrounded || airJump) && body2d.velocity.y <= 0) {
          body2d.velocity = new Vector2(body2d.velocity.x, jumpSpeed);
          Instantiate(dustEffect, rightFoot.position, Quaternion.identity);
       }
       else if (isOnWall && inputX == wallJumpDir) {
+         Debug.Log("wall jump");
          body2d.velocity = new Vector2(inputX * wallJump.x, wallJump.y);
          wallJumpDir = 0;
          Instantiate(dustEffect, wallDetect.position, Quaternion.identity);
@@ -148,6 +161,7 @@ public class CharController : MonoBehaviour {
    void OnTriggerEnter2D(Collider2D other) {
       if (other.gameObject.CompareTag("Deadly")) {
          var dead = Instantiate(playerDeadEffect, new Vector3(transform.position.x, transform.position.y + 5, 0), Quaternion.identity) as GameObject;
+         dead.transform.localScale = new Vector3(transform.localScale.x, 1, 1);
          GameManager.Instance.getDeadBody(dead);
          Destroy(this.gameObject);
 
