@@ -11,6 +11,7 @@ public class SimpleRoutine : MonoBehaviour {
    private Vector2 tempPos;
    [SerializeField]
    private bool swap = false;
+
    void Update () {
 
       if (transform.position != endPos.position && !swap) {

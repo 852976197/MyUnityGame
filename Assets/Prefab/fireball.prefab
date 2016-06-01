@@ -13,7 +13,7 @@ GameObject:
   - 50: {fileID: 5062090}
   - 114: {fileID: 11411658}
   - 58: {fileID: 5886338}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fireball
   m_TagString: Deadly
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3292b6d051fe8b4e981816814cad872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomForce: {x: 17000, y: 21000}
+  randomForce: {x: 17000, y: 22000}
   delayTime: 1
 --- !u!212 &21208342
 SpriteRenderer:

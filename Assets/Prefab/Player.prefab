@@ -321,6 +321,7 @@ MonoBehaviour:
   cantJump: 0
   isGrounded: 0
   airJump: 0
+  wallJumping: 0
 --- !u!212 &21259534
 SpriteRenderer:
   m_ObjectHideFlags: 1

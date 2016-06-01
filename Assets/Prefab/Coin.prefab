@@ -11,8 +11,7 @@ GameObject:
   - 212: {fileID: 21265888}
   - 95: {fileID: 9511236}
   - 58: {fileID: 5837198}
-  - 114: {fileID: 11471058}
-  - 114: {fileID: 11403478}
+  - 114: {fileID: 11461162}
   m_Layer: 13
   m_Name: Coin
   m_TagString: Coin
@@ -27,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 77.133835, y: -36.660866, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,19 +62,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11403478
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0c2d80e68190284f99df6cb9570b0e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  status: 1
---- !u!114 &11471058
+--- !u!114 &11461162
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

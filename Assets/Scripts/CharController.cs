@@ -13,18 +13,19 @@ public class CharController : MonoBehaviour {
    public CircleCollider2D[] circleCols;
 
    [SerializeField]//[HideInInspector]
-   public bool jumpDown, isOnLadder, isClimbing, isOnWall,cantJump;
+   public bool jumpDown, isOnLadder, isClimbing, isOnWall,cantJump,isJumping;
 
    public delegate void onDestroy();
    public event onDestroy DestroyCallBack;
 
    [SerializeField]
-   private bool isGrounded = false, airJump = false;
+   private bool isGrounded, airJump, wallJumping,moveActive;
 
-   private float inputX, inputY, wallJumpDir = 0, timeElapsed = 0f, airJumpTime;
+   private float inputX, inputY, wallJumpDir = 0, timeElapsed = 0f, airJumpTime,wallJumpTime,difference;
    private Rigidbody2D body2d;
    private Animator animator;
    private AnimationController myAni;
+   private Transform enter;
 
    void Awake() {
       body2d = this.GetComponent<Rigidbody2D>();
@@ -33,18 +34,35 @@ public class CharController : MonoBehaviour {
    }
 
    void FixedUpdate() {
-      if (this.gameObject != null && !GameManager.Instance.winLevel) {
+      if (this.gameObject != null && !GameManager.Instance.winLevel && !wallJumping) {
          MoveX(Input.GetAxisRaw("Horizontal"));
          MoveY(Input.GetAxisRaw("Vertical"));
          CheckIsGrounded();
          CheckIsOnWall();
          CheckCantJump();
       }
+
+      if (inputX == 0 && moveActive) {
+         if(!isJumping)
+         transform.position = new Vector2(enter.position.x + difference, transform.position.y);
+      }
+      else {
+         moveActive = false;
+      }
    }
 
    void Update() {
-      if (Input.GetButton("Jump") && !cantJump &&!GameManager.Instance.winLevel)
-         Jump();
+      if (Input.GetButton("Jump") && !cantJump && !GameManager.Instance.winLevel) {
+         Jump();       
+      }
+
+      if (wallJumping) {
+         wallJumpTime += Time.deltaTime;
+         if(wallJumpTime > 0.1f) {
+            wallJumping = false;
+            wallJumpTime = 0f;
+         }
+      }
    }
 
    void CheckCantJump() {
@@ -57,6 +75,7 @@ public class CharController : MonoBehaviour {
       isOnWall = (nearWall && !isGrounded) ? true : false;
 
       if (isOnWall) {
+         isJumping = false;
          boxCols[0].enabled = false;
          boxCols[1].enabled = true;
          circleCols[0].enabled = false;
@@ -94,8 +113,10 @@ public class CharController : MonoBehaviour {
       isGrounded = (Physics2D.Linecast(bodyTrans.position, leftFoot.position, JumpDetectlayers)
       || Physics2D.Linecast(bodyTrans.position, rightFoot.position, JumpDetectlayers)) ? true : false;
 
-      if (isGrounded)
+      if (isGrounded) {
+         isJumping = false;
          airJumpTime = 0;
+      }
       else {
          airJumpTime += Time.deltaTime;
          airJump = (airJumpTime < 0.2f) ? true : false;
@@ -105,14 +126,6 @@ public class CharController : MonoBehaviour {
    }
 
    public void MoveX(float horizontalInput) {
-      //var forceX = 0f;
-      //var absVelX = Mathf.Abs(body2d.velocity.x);
-      /* add acceleration
-      if (absVelX < maxVelocity && !isClimbing) {
-      forceX = moveSpeed * horizontalInput;
-      body2d.AddForce(new Vector2(forceX, 0));  
-      }*/
-
       Vector2 moveVel = body2d.velocity;
       inputX = horizontalInput;
       myAni.UpdateSpeed(horizontalInput);
@@ -140,14 +153,29 @@ public class CharController : MonoBehaviour {
 
    public void Jump() {
       if ((isGrounded || airJump) && body2d.velocity.y <= 0) {
+         isJumping = true;
          body2d.velocity = new Vector2(body2d.velocity.x, jumpSpeed);
          Instantiate(dustEffect, rightFoot.position, Quaternion.identity);
       }
       else if (isOnWall && inputX == wallJumpDir) {
-         Debug.Log("wall jump");
-         body2d.velocity = new Vector2(inputX * wallJump.x, wallJump.y);
-         wallJumpDir = 0;
-         Instantiate(dustEffect, wallDetect.position, Quaternion.identity);
+         if (!wallJumping) {
+            isJumping = true;
+            body2d.velocity = new Vector2(wallJumpDir * wallJump.x, wallJump.y);
+            wallJumpDir = 0;
+            Instantiate(dustEffect, wallDetect.position, Quaternion.identity);
+            wallJumping = true;
+         }
+      }
+   }
+
+   //move with moving platform not perfect yet.
+   void OnCollisionStay2D(Collision2D other) {
+      if (other.gameObject.CompareTag("MovingPlatform")) {
+         if (!moveActive) {
+            enter = other.transform;
+            difference = this.gameObject.transform.position.x - enter.position.x;
+            moveActive = true;
+         }
       }
    }
 

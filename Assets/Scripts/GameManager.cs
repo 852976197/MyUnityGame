@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using System.Linq;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
@@ -8,18 +9,22 @@ public class GameManager : MonoBehaviour {
    public GameObject playerPrefab;   
    public GameObject[] checkPoints;
    public int maxCoinNum, curCoinNum;
+   public GameObject[] DeadEffect;
 
    [HideInInspector]
    public bool gameOver, changeView, winLevel=false;
 
    [SerializeField]
    private GameObject deadBody,player;
+   private GameObject[] coinCount;
    private TimeManager time;
-   private bool blink;
-   private float blinkTime;
    private Transform spawnPoint;
+   private bool blink;
+   private float blinkTime,timer;
+   private Transform s;
    private Text respawnText,levelText,coinText,winText,deathText;
    private int deathNum = 0;
+   private string cpName,cpDisable;
 
    void Awake () {
       if (Instance == null) {
@@ -34,10 +39,11 @@ public class GameManager : MonoBehaviour {
 
       #region GetComponen
       time = GetComponent<TimeManager>();
-      checkPoints = GameObject.FindGameObjectsWithTag("CheckPoint");
+      coinCount = GameObject.FindGameObjectsWithTag("Coin");
       spawnPoint = GameObject.Find("SpawnPoint").GetComponent<Transform>();
       respawnText = GameObject.Find("respawnText").GetComponent<Text>();
       levelText = GameObject.Find("LevelText").GetComponent<Text>();
+      checkPoints = GameObject.FindGameObjectsWithTag("CheckPoint");
       coinText = GameObject.Find("coinText").GetComponent<Text>();
       winText = GameObject.Find("WinText").GetComponent<Text>();
       deathText = GameObject.Find("DeathText").GetComponent<Text>();
@@ -50,19 +56,20 @@ public class GameManager : MonoBehaviour {
       Time.timeScale = 1;
       winText.canvasRenderer.SetAlpha(0);
       deathText.canvasRenderer.SetAlpha(0);
+      CoinCounter();
       Respawn();
    }
 	
 	void Update () {
       coinText.text = curCoinNum + "/" + maxCoinNum;
 
-      if (gameOver && Time.timeScale == 0) {
+      if (gameOver) {
          blinkTime++;
          if (blinkTime % 40 == 0) {
             blink = !blink;
          }
          respawnText.canvasRenderer.SetAlpha(blink ? 0 : 1);
-         if ( Input.anyKeyDown) {
+         if ( Input.anyKeyDown && Time.timeScale == 0) {
             time.ManipulateTime(1, 1f);
             blinkTime = 0;
             deathNum++;
@@ -96,12 +103,22 @@ public class GameManager : MonoBehaviour {
       gameOver = true;
 
       respawnText.text = "PRESS ANY BUTTON TO RESPAWN";
+
+      foreach(GameObject temp in DeadEffect) {
+         temp.SetActive(true);
+      }
+
+      timer = 0f;
    }
 
    void Respawn() {
       changeView = false;
       gameOver = false;
-      respawnText.canvasRenderer.SetAlpha(0);     
+      respawnText.canvasRenderer.SetAlpha(0);
+
+      foreach (GameObject temp in DeadEffect) {
+         temp.SetActive(false);
+      }
 
       if (player == null)
          player = Instantiate(playerPrefab, spawnPoint.position, Quaternion.identity) as GameObject;
@@ -115,16 +132,17 @@ public class GameManager : MonoBehaviour {
    }
 
    public void UpdateCheckPoints(GameObject currentCheck) {
-      foreach (GameObject cp in checkPoints) {
-         if (cp.GetComponent<CheckPoint>().status == CheckPoint.state.Active)
-            cp.GetComponent<CheckPoint>().status = CheckPoint.state.Locked;
-      }
-      currentCheck.GetComponent<CheckPoint>().status = CheckPoint.state.Active;
+         foreach (GameObject cp in checkPoints) {
+            if (cp.GetComponent<CheckPoint>().status == CheckPoint.state.Active)
+               cp.GetComponent<CheckPoint>().status = CheckPoint.state.Locked;
+         }
+         currentCheck.GetComponent<CheckPoint>().status = CheckPoint.state.Active;
    }
 
    public void Win() {
       if (winLevel) {
-         player.GetComponent<Rigidbody2D>().gravityScale = 2;
+         player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+         player.GetComponent<Rigidbody2D>().gravityScale = 0;
          player.GetComponent<Animator>().Stop();
          winText.enabled = true;
          time.ManipulateTime(0, 5f);
@@ -146,6 +164,13 @@ public class GameManager : MonoBehaviour {
       }
    }
 
+   void CoinCounter() {
+      foreach(GameObject c in coinCount) {
+         maxCoinNum++;
+      }
+      maxCoinNum += 5;
+   }
+
    public void getDeadBody(GameObject dead) {
       deadBody = dead;
    }
@@ -153,5 +178,4 @@ public class GameManager : MonoBehaviour {
    public Text getLevelText() {
       return levelText;
    }
-
 }
