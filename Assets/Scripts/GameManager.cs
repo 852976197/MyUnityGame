@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour {
             blink = !blink;
          }
          respawnText.canvasRenderer.SetAlpha(blink ? 0 : 1);
-         if ( Input.anyKeyDown && Time.timeScale == 0) {
+         if (Input.anyKeyDown && Time.timeScale == 0) {
             time.ManipulateTime(1, 1f);
             blinkTime = 0;
             deathNum++;

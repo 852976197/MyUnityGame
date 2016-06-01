@@ -6,13 +6,11 @@ public class Selector : MonoBehaviour {
 
    public void setBeg() {
       LevelManager.Instance.setBeg();
+      SceneManager.LoadScene(1);
    }
 
    public void setExp() {
       LevelManager.Instance.setExp();
-   }
-
-   public void LoadLeve() {
       SceneManager.LoadScene(1);
    }
 }

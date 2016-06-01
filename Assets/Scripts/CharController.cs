@@ -19,7 +19,7 @@ public class CharController : MonoBehaviour {
    public event onDestroy DestroyCallBack;
 
    [SerializeField]
-   private bool isGrounded, airJump, wallJumping,moveActive;
+   private bool isGrounded = false, airJump = false, wallJumping = false,moveActive = false;
 
    private float inputX, inputY, wallJumpDir = 0, timeElapsed = 0f, airJumpTime,wallJumpTime,difference;
    private Rigidbody2D body2d;
@@ -42,9 +42,11 @@ public class CharController : MonoBehaviour {
          CheckCantJump();
       }
 
-      if (inputX == 0 && moveActive) {
-         if(!isJumping)
-         transform.position = new Vector2(enter.position.x + difference, transform.position.y);
+      if (moveActive && inputX == 0) {
+            if (!isJumping)
+               transform.position = new Vector2(enter.position.x + difference, transform.position.y);
+            else
+               moveActive = false;
       }
       else {
          moveActive = false;
@@ -170,11 +172,16 @@ public class CharController : MonoBehaviour {
 
    //move with moving platform not perfect yet.
    void OnCollisionStay2D(Collision2D other) {
-      if (other.gameObject.CompareTag("MovingPlatform")) {
-         if (!moveActive) {
-            enter = other.transform;
-            difference = this.gameObject.transform.position.x - enter.position.x;
-            moveActive = true;
+      if (LevelManager.Instance.beg) {
+         if(other.gameObject.tag != "MovingPlatform") {
+            moveActive = false;
+         }
+         if (other.gameObject.CompareTag("MovingPlatform")) {
+            if (!moveActive) {
+               enter = other.transform;
+               difference = this.gameObject.transform.position.x - enter.position.x;
+               moveActive = true;
+            }
          }
       }
    }
