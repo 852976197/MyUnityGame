@@ -314,14 +314,18 @@ MonoBehaviour:
   circleCols:
   - {fileID: 5879364}
   - {fileID: 5848420}
+  jumpSound: {fileID: 8300000, guid: 76f8e96c896b3bf4a9aedb06c729d822, type: 3}
+  hitSound: {fileID: 8300000, guid: 4709e6d9e03392b4a9d72a8bc19efb69, type: 3}
   jumpDown: 0
   isOnLadder: 0
   isClimbing: 0
   isOnWall: 0
   cantJump: 0
+  isJumping: 0
   isGrounded: 0
   airJump: 0
   wallJumping: 0
+  moveActive: 0
 --- !u!212 &21259534
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -7,7 +7,7 @@ public class Fireball : MonoBehaviour {
    public float delayTime;
 
    private Rigidbody2D body2d;
-   private bool turn = false;
+   private bool turn = false, fired = false;
    private float timeElapsed = 0;
 
    void Awake() {
@@ -32,9 +32,14 @@ public class Fireball : MonoBehaviour {
    }
 
    void Fire() {
-      float forceY = Random.Range(randomForce.x, randomForce.y);
-      body2d.AddForce(new Vector2(0, forceY));
-      timeElapsed = 0;
+      if (!fired) {
+         float forceY = Random.Range(randomForce.x, randomForce.y);
+         body2d.AddForce(new Vector2(0, forceY));
+         fired = true;
+      }
+      if(gameObject!=null && timeElapsed > 7f) {
+         Destroy(gameObject);
+      }
    }
 
    void OnTriggerEnter2D(Collider2D other) {

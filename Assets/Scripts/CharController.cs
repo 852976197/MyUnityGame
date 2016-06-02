@@ -11,8 +11,7 @@ public class CharController : MonoBehaviour {
    public GameObject playerDeadEffect, dustEffect, slideEffect;
    public BoxCollider2D[] boxCols;
    public CircleCollider2D[] circleCols;
-
-   [SerializeField]//[HideInInspector]
+   public AudioClip jumpSound, hitSound;
    public bool jumpDown, isOnLadder, isClimbing, isOnWall,cantJump,isJumping;
 
    public delegate void onDestroy();
@@ -158,6 +157,7 @@ public class CharController : MonoBehaviour {
          isJumping = true;
          body2d.velocity = new Vector2(body2d.velocity.x, jumpSpeed);
          Instantiate(dustEffect, rightFoot.position, Quaternion.identity);
+         AudioSource.PlayClipAtPoint(jumpSound, transform.position);
       }
       else if (isOnWall && inputX == wallJumpDir) {
          if (!wallJumping) {
@@ -166,6 +166,7 @@ public class CharController : MonoBehaviour {
             wallJumpDir = 0;
             Instantiate(dustEffect, wallDetect.position, Quaternion.identity);
             wallJumping = true;
+            AudioSource.PlayClipAtPoint(jumpSound, transform.position);
          }
       }
    }
@@ -195,6 +196,7 @@ public class CharController : MonoBehaviour {
 
    void OnTriggerEnter2D(Collider2D other) {
       if (other.gameObject.CompareTag("Deadly")) {
+         AudioSource.PlayClipAtPoint(hitSound, transform.position);
          var dead = Instantiate(playerDeadEffect, new Vector3(transform.position.x, transform.position.y + 5, 0), Quaternion.identity) as GameObject;
          dead.transform.localScale = new Vector3(transform.localScale.x, 1, 1);
          GameManager.Instance.getDeadBody(dead);

@@ -6,6 +6,7 @@ public class CheckPoint : MonoBehaviour {
    public enum state {Inactive,Active,Locked};
    public state status;
    public Sprite[] activeStatus;
+   public AudioClip check;
 
    private SpriteRenderer sp;
 
@@ -21,7 +22,11 @@ public class CheckPoint : MonoBehaviour {
 	}
 
    void OnTriggerEnter2D(Collider2D other) {
-      if (other.gameObject.CompareTag("Player"))
+      if (other.gameObject.CompareTag("Player")) {
+         if (status == state.Inactive) {
+            AudioSource.PlayClipAtPoint(check, transform.position);
+         }
          GameManager.Instance.UpdateCheckPoints(this.gameObject);
+      }
    }
 }

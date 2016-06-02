@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour {
    private Text respawnText,levelText,coinText,winText,deathText;
    private int deathNum = 0;
    private string cpName,cpDisable;
+   private AudioSource bgMusic;
 
    void Awake () {
       if (Instance == null) {
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour {
          return;
       }
 
-      #region GetComponen
+      #region GetComponent
       time = GetComponent<TimeManager>();
       coinCount = GameObject.FindGameObjectsWithTag("Coin");
       spawnPoint = GameObject.Find("SpawnPoint").GetComponent<Transform>();
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour {
       coinText = GameObject.Find("coinText").GetComponent<Text>();
       winText = GameObject.Find("WinText").GetComponent<Text>();
       deathText = GameObject.Find("DeathText").GetComponent<Text>();
+      bgMusic = gameObject.GetComponent<AudioSource>();
       #endregion
    }
 
@@ -64,15 +66,20 @@ public class GameManager : MonoBehaviour {
       coinText.text = curCoinNum + "/" + maxCoinNum;
 
       if (gameOver) {
-         blinkTime++;
-         if (blinkTime % 40 == 0) {
-            blink = !blink;
+         if (Time.timeScale < 0.3f) {
+            blinkTime++;
+            if (blinkTime % 40 == 0) {
+               blink = !blink;
+            }
+            respawnText.canvasRenderer.SetAlpha(blink ? 0 : 1);
+            bgMusic.Stop();
          }
-         respawnText.canvasRenderer.SetAlpha(blink ? 0 : 1);
+
          if (Input.anyKeyDown && Time.timeScale == 0) {
             time.ManipulateTime(1, 1f);
             blinkTime = 0;
             deathNum++;
+
             foreach (GameObject cp in checkPoints) {
                if (cp.GetComponent<CheckPoint>().status == CheckPoint.state.Active) {
                   var checkPoint = cp.GetComponent<Transform>();
@@ -112,6 +119,7 @@ public class GameManager : MonoBehaviour {
    }
 
    void Respawn() {
+      bgMusic.Play();
       changeView = false;
       gameOver = false;
       respawnText.canvasRenderer.SetAlpha(0);
@@ -141,6 +149,7 @@ public class GameManager : MonoBehaviour {
 
    public void Win() {
       if (winLevel) {
+         bgMusic.Stop();
          player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
          player.GetComponent<Rigidbody2D>().gravityScale = 0;
          player.GetComponent<Animator>().Stop();
@@ -165,9 +174,10 @@ public class GameManager : MonoBehaviour {
    }
 
    void CoinCounter() {
-      foreach(GameObject c in coinCount) {
+      foreach (GameObject c in coinCount) {
          maxCoinNum++;
       }
+
       maxCoinNum += 5;
    }
 
