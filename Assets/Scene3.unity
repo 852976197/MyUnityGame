@@ -47794,7 +47794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3afe3e737091e8041a17cd95dd4a2a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winSound: {fileID: 0}
+  winSound: {fileID: 8300000, guid: d21332bc0fad6494ea456ee14bec36b0, type: 3}
 --- !u!95 &1117379419
 Animator:
   serializedVersion: 3
