@@ -6,12 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/LevelSelection.unity
+    path: Assets/ModeSelect.unity
+  - enabled: 1
+    path: Assets/LevelSelect.unity
   - enabled: 1
     path: Assets/Scene1.1.unity
   - enabled: 1
     path: Assets/Scene2.unity
   - enabled: 1
     path: Assets/Scene3.unity
+  - enabled: 1
+    path: Assets/Scene4.unity
   - enabled: 1
     path: Assets/win.unity

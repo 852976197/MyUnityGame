@@ -14,7 +14,7 @@ GameObject:
   - 68: {fileID: 6871026}
   - 61: {fileID: 6189894}
   m_Layer: 0
-  m_Name: lava
+  m_Name: lava small
   m_TagString: Deadly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1336.9, y: -110.1, z: 0}
-  m_LocalScale: {x: 2596.5215, y: 30, z: 1}
+  m_LocalPosition: {x: 243.5, y: -271.5, z: 0}
+  m_LocalScale: {x: 600, y: 30, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,10 +71,10 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143204}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: -0.38151246}
   serializedVersion: 2
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a58bee2628a2f441b7add76bc61df80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: -0.05, y: 0}
+  speed: {x: 0.05, y: 0}
   front: 1
 --- !u!1001 &100100000
 Prefab:

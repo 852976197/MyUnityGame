@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour {
             changeView = !changeView;
 
       if (Input.GetKey(KeyCode.Escape))
-         SceneManager.LoadScene(0);
+         SceneManager.LoadScene(1);
 
       Win();
     }
