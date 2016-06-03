@@ -149,6 +149,8 @@ public class GameManager : MonoBehaviour {
 
    public void Win() {
       if (winLevel) {
+         var nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+         var printLine = "";
          bgMusic.Stop();
          player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
          player.GetComponent<Rigidbody2D>().gravityScale = 0;
@@ -164,10 +166,14 @@ public class GameManager : MonoBehaviour {
          var addS = "";
          addS = (deathNum > 1) ? "S" : "";
 
-         deathText.text = "DEATH TIME" + addS + ": " + deathNum + "\n\n" + "PRESS 'ENTER' TO PLAY NEXT LEVEL";
+         if(nextScene < 7) {
+            printLine = "PRESS 'ENTER' TO PLAY NEXT LEVEL";
+         }else {
+            printLine = "PRESS 'ESC' TO GO BACK HOME";
+         }
+         deathText.text = "DEATH TIME" + addS + ": " + deathNum + "\n\n" + printLine;
 
-         if (Input.GetKeyDown(KeyCode.Return)) {
-            var nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+         if (Input.GetKeyDown(KeyCode.Return) && nextScene<7) {          
             SceneManager.LoadScene(nextScene);
          }
       }
