@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour {
       var playerDestroyScript = playerPrefab.GetComponent<CharController>();
       playerDestroyScript.DestroyCallBack -= OnPlayerKilled;
 
-      time.ManipulateTime(0, 15f);
+      time.ManipulateTime(0, 11f);
 
       gameOver = true;
 
@@ -152,6 +152,9 @@ public class GameManager : MonoBehaviour {
          var nextScene = SceneManager.GetActiveScene().buildIndex + 1;
          var printLine = "";
          bgMusic.Stop();
+         foreach (GameObject temp in DeadEffect) {
+            temp.SetActive(true);
+         }
          player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
          player.GetComponent<Rigidbody2D>().gravityScale = 0;
          player.GetComponent<Animator>().Stop();
@@ -169,11 +172,11 @@ public class GameManager : MonoBehaviour {
          if(nextScene < 7) {
             printLine = "PRESS 'ENTER' TO PLAY NEXT LEVEL";
          }else {
-            printLine = "PRESS 'ESC' TO GO BACK HOME";
+            printLine = "PRESS 'ENTER' TO FINISH THE GAME";
          }
-         deathText.text = "DEATH TIME" + addS + ": " + deathNum + "\n\n" + printLine;
+         deathText.text = "DEATH COUNT" + addS + ": " + deathNum + "\n\n" + printLine;
 
-         if (Input.GetKeyDown(KeyCode.Return) && nextScene<7) {          
+         if (Input.GetKeyDown(KeyCode.Return)) {          
             SceneManager.LoadScene(nextScene);
          }
       }

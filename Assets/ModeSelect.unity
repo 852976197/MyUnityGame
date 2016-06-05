@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6764706, g: 0.6764706, b: 0.6764706, a: 1}
+  m_Color: {r: 0.9044118, g: 0.9044118, b: 0.9044118, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6764706, g: 0.6764706, b: 0.6764706, a: 1}
+  m_Color: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -691,6 +691,7 @@ GameObject:
   - 92: {fileID: 926196310}
   - 124: {fileID: 926196309}
   - 81: {fileID: 926196308}
+  - 114: {fileID: 926196313}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -765,6 +766,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &926196313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 926196307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5780a1993ea6ed741a1a4972f643d6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camLimit: {x: 0, y: 0, z: 0, w: 0}
+  smoothTimeX: 0
+  smoothTimeY: 0
+  background: {fileID: 0}
+  startText: {fileID: 0}
+  camPos: []
+  moveSpeed: 60
+  activeMap: 1
 --- !u!1 &1360352798
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +836,11 @@ MonoBehaviour:
   timeInterval: 0.1
   destoryAfter: 0
   blinkText: 0
+  active: 1
+  activeOnTrigger: 0
+  Y: 0
+  X: 0
+  trigger: {fileID: 0}
 --- !u!114 &1360352802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,9 +931,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cdf7a1fda75e0d14c9f60b2fe5cb9312, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.008
+  m_Volume: 0.02
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -1188,7 +1213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6764706, g: 0.6764706, b: 0.6764706, a: 1}
+  m_Color: {r: 0.78676474, g: 0.78676474, b: 0.78676474, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1231,6 +1256,11 @@ MonoBehaviour:
   timeInterval: 0
   destoryAfter: 0
   blinkText: 1
+  active: 1
+  activeOnTrigger: 0
+  Y: 0
+  X: 0
+  trigger: {fileID: 0}
 --- !u!1 &2129435853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,7 +1477,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1580782611}
-        m_MethodName: setBeg
+        m_MethodName: setExp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -276,6 +276,7 @@ MonoBehaviour:
   startPos: {fileID: 481280}
   endPos: {fileID: 488168}
   moveSpeed: 30
+  monster: 0
   swap: 0
 --- !u!114 &11458642
 MonoBehaviour:

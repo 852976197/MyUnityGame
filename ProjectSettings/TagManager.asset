@@ -12,6 +12,7 @@ TagManager:
   - Coin
   - Border
   - MovingPlatform
+  - camPos
   layers:
   - Default
   - TransparentFX

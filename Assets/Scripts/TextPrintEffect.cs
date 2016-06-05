@@ -8,19 +8,42 @@ public class TextPrintEffect : MonoBehaviour {
    public string displayText;
    public float timeInterval;
    public bool destoryAfter;
-   public bool blinkText;
+   public bool blinkText,active = true;
+   public bool activeOnTrigger;
+   public bool Y, X;
+   public Transform trigger;
 
    private bool blink;
    private float blinkTime;
+   private GameObject player;
+   private CameraFollow cam;
 
-   void Start () {
-      if(!blinkText)
-      StartCoroutine(PrintText());
+   void Awake() {
+      cam = Camera.main.GetComponent<CameraFollow>();
    }
 
    void Update() {
+      if (active && !blinkText && !activeOnTrigger && !cam.activeMap) {
+         StartCoroutine(PrintText());
+         active = false;
+      }
+
       if (blinkText) {
          Blink();
+      }
+
+      if (activeOnTrigger && Y) {
+         player = GameObject.Find("Player(Clone)");
+         if(player != null&& trigger.position.y < player.transform.position.y) {
+            StartCoroutine(PrintText());
+            activeOnTrigger = false;
+         }
+      }else if(activeOnTrigger && X) {
+         player = GameObject.Find("Player(Clone)");
+         if (player != null && trigger.position.x < player.transform.position.x) {
+            StartCoroutine(PrintText());
+            activeOnTrigger = false;
+         }
       }
    }
 

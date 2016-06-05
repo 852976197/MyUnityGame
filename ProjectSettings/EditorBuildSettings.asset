@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Scene4.unity
   - enabled: 1
     path: Assets/Scene5.unity
+  - enabled: 1
+    path: Assets/win.unity

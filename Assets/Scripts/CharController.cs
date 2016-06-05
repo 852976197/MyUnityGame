@@ -12,12 +12,12 @@ public class CharController : MonoBehaviour {
    public BoxCollider2D[] boxCols;
    public CircleCollider2D[] circleCols;
    public AudioClip jumpSound, hitSound;
+   [HideInInspector]
    public bool jumpDown, isOnLadder, isClimbing, isOnWall,cantJump,isJumping;
 
    public delegate void onDestroy();
    public event onDestroy DestroyCallBack;
 
-   [SerializeField]
    private bool isGrounded = false, airJump = false, wallJumping = false,moveActive = false;
 
    private float inputX, inputY, wallJumpDir = 0, timeElapsed = 0f, airJumpTime,wallJumpTime,difference;
@@ -25,17 +25,21 @@ public class CharController : MonoBehaviour {
    private Animator animator;
    private AnimationController myAni;
    private Transform enter;
+   private CameraFollow cam;
 
    void Awake() {
       body2d = this.GetComponent<Rigidbody2D>();
       animator = this.GetComponent<Animator>();
       myAni = this.GetComponent<AnimationController>();
+      cam = Camera.main.GetComponent<CameraFollow>();
    }
 
    void FixedUpdate() {
       if (this.gameObject != null && !GameManager.Instance.winLevel && !wallJumping) {
-         MoveX(Input.GetAxisRaw("Horizontal"));
-         MoveY(Input.GetAxisRaw("Vertical"));
+         if (!cam.activeMap) {
+            MoveX(Input.GetAxisRaw("Horizontal"));
+            MoveY(Input.GetAxisRaw("Vertical"));
+         }
          CheckIsGrounded();
          CheckIsOnWall();
          CheckCantJump();
@@ -53,7 +57,7 @@ public class CharController : MonoBehaviour {
    }
 
    void Update() {
-      if (Input.GetButton("Jump") && !cantJump && !GameManager.Instance.winLevel) {
+      if (Input.GetButton("Jump") && !cantJump && !GameManager.Instance.winLevel && !cam.activeMap) {
          Jump();       
       }
 
@@ -137,7 +141,7 @@ public class CharController : MonoBehaviour {
       }
    }
 
-   public void MoveY(float verti) {
+   public virtual void MoveY(float verti) {
       inputY = verti;
 
       if (isOnLadder && inputY != 0) {
@@ -157,7 +161,7 @@ public class CharController : MonoBehaviour {
          isJumping = true;
          body2d.velocity = new Vector2(body2d.velocity.x, jumpSpeed);
          Instantiate(dustEffect, rightFoot.position, Quaternion.identity);
-         AudioSource.PlayClipAtPoint(jumpSound, transform.position);
+         AudioSource.PlayClipAtPoint(jumpSound, transform.position,3f);
       }
       else if (isOnWall && inputX == wallJumpDir) {
          if (!wallJumping) {
@@ -166,7 +170,7 @@ public class CharController : MonoBehaviour {
             wallJumpDir = 0;
             Instantiate(dustEffect, wallDetect.position, Quaternion.identity);
             wallJumping = true;
-            AudioSource.PlayClipAtPoint(jumpSound, transform.position);
+            AudioSource.PlayClipAtPoint(jumpSound, transform.position,3f);
          }
       }
    }
@@ -196,7 +200,7 @@ public class CharController : MonoBehaviour {
 
    void OnTriggerEnter2D(Collider2D other) {
       if (other.gameObject.CompareTag("Deadly")) {
-         AudioSource.PlayClipAtPoint(hitSound, transform.position);
+         AudioSource.PlayClipAtPoint(hitSound, transform.position,3f);
          var dead = Instantiate(playerDeadEffect, new Vector3(transform.position.x, transform.position.y + 5, 0), Quaternion.identity) as GameObject;
          dead.transform.localScale = new Vector3(transform.localScale.x, 1, 1);
          GameManager.Instance.getDeadBody(dead);

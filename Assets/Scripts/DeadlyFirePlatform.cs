@@ -57,6 +57,7 @@ public class DeadlyFirePlatform : MonoBehaviour {
          else {
             defaultfire = Instantiate(fires[0], new Vector3(transform.position.x, transform.position.y + 14f, 0), Quaternion.identity) as GameObject;
             defaultfire.SetActive(false);
+            defaultfire.transform.SetParent(this.gameObject.transform);
          }
       }
    }

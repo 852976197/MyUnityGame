@@ -12,7 +12,6 @@ public class ActivePlatform : MonoBehaviour {
 
    void Update() {
       if (GameManager.Instance.gameOver) {
-         Debug.Log("reset");
          script.enabled = false;
          transform.position = defaultPos;
       }

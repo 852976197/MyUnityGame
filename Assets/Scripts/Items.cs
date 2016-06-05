@@ -19,7 +19,7 @@ public class Items : MonoBehaviour {
       for(int i = 0; i<addAmount; i++) {
          var random = Random.Range(0, coinSound.Length);
          GameManager.Instance.curCoinNum ++;
-         AudioSource.PlayClipAtPoint(coinSound[random], transform.position,0.2f);
+         AudioSource.PlayClipAtPoint(coinSound[random], transform.position,1f);
          yield return new WaitForSeconds(0.1f);
       }
       Destroy(gameObject);
